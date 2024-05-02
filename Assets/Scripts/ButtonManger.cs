@@ -29,6 +29,11 @@ public class ButtonManger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // testing features 
+        // key press for changing between modes using . and ,
+        // key press B to enact mode change de/activate buttons
+        // key press F to change between display numbers and letters
+
         if (Input.GetKeyDown(KeyCode.Period))
         {
             Debug.Log("Plus");
@@ -90,6 +95,7 @@ public class ButtonManger : MonoBehaviour
         }
     }
 
+    //register and deregister buttons on list
     public void RegisterButton(ButtonHandler newButton)
     {
         buttonsList.Add(newButton);
@@ -100,6 +106,8 @@ public class ButtonManger : MonoBehaviour
         buttonsList.Remove(deleteButton);
     }
 
+    //function to loop through the buttons list and deactivate and activate buttons based on the current mode list
+    // could be cleaner using a list of objects for the modes (scriptable objects?)
     public void ActivateButtons(int mode)
     {
 
@@ -119,6 +127,7 @@ public class ButtonManger : MonoBehaviour
         }
     }
 
+    //functions to loop through the buttons registered and change them to use the number or symbol they hold for themselves
     public void NumericButtons()
     {
         Debug.Log("Numeric");
